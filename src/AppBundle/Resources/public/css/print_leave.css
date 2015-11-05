@@ -1,0 +1,32 @@
+.container {
+    /*margin: auto;*/
+    /*width: 1200px;*/
+}
+.request {
+    width: 600px;
+    margin: auto;
+}
+.bold {
+    font-weight: bold;
+}
+.indent {
+    text-indent: 55px;
+}
+.image {
+    width: 239px;
+    height: 55px;
+    align-content: center;
+}
+.image_div {
+    margin: auto;
+    width: 300px;
+    height: 90px;
+}
+p {
+    font-size: 20px;
+}
+
+.page {
+    overflow: hidden;
+    page-break-after: always;
+}

@@ -1,0 +1,8 @@
+.select2-container {
+    padding: 0;
+}
+
+.select2-container .select2-choice {
+    line-height: 34px;
+    height: 34px;
+}
