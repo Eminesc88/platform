@@ -1,0 +1,5 @@
+services:
+
+    general_service:
+        class: AppBundle\Service\GeneralService
+        arguments: [@doctrine.orm.entity_manager]

@@ -1,6 +1,21 @@
 {% extends 'AppBundle::base_admin.html.twig'%}
 
-{% block heading %}<h1>Ceva nou</h1>{% endblock %}
+{% block heading %}<h1>Introducere facultate</h1>{% endblock %}
 {% block content %}
-pam pam
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-md-9 no-padding" >
+                {{ form_start(facultyForm) }}
+                {{ form_row(facultyForm.faculty) }}
+                {{ form_end(facultyForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        
+    </script>
 {% endblock %}
