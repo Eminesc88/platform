@@ -1,0 +1,16 @@
+.select2-container {
+    padding: 0;
+}
+
+.select2-container .select2-choice {
+    line-height: 34px;
+    height: 34px;
+}
+
+#s2id_request_filter_form_owner {
+    width:100px;
+}
+
+#s2id_request_filter_form_backUp {
+    width: 100px;
+}

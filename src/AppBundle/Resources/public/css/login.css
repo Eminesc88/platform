@@ -1,0 +1,228 @@
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,300);
+
+/******************************************************
+ * =General
+ *****************************************************/
+
+
+/**
+ * Antialiasing
+ */
+
+body, input, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Reset
+ */
+
+body, form, input, button, h1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/******************************************************
+ * =Body
+ *****************************************************/
+
+body {
+  padding: 60px;
+  background: #fff;
+  font-family: Nunito, sans-serif;
+  font-size: 100%;
+}
+.log{
+    text-align:center;
+    margin-top: 15%;
+}
+.log a{
+    background-color: #14B1E7;
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 40px;
+    margin-left: 15px;
+    -moz-transition: ease 0.35s all;
+    -o-transition: ease 0.35s all;
+    -webkit-transition: ease 0.35s all;
+    transition: ease 0.35s all;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+.log a:hover{
+    text-decoration:none;
+    background-color: #2AC4EA;
+}
+.log span.glyphicon.glyphicon-user {
+    margin-right: 10px;
+}
+.log h1{
+    color:black;
+    font-size:20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin-bottom: -5px;
+    margin-right: 118px;
+}
+/******************************************************
+ * =Form
+ *****************************************************/
+
+form {
+  margin: auto;
+  margin-top: 15%;
+  padding: 18px 22px;;
+  width: 320px;
+  background: #14B1E7;
+}
+
+/**
+ * Title
+ */
+
+form h1 {
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin-bottom: -12px;
+    margin-left: 60px;
+    font-size: 17px;
+}
+
+/**
+ * Inputs and button
+ */
+
+input, button {
+  width: 100%;
+  border: none;
+  padding: 14px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  -webkit-transition: background-color 80ms ease-out;
+  -moz-transition: background-color 80ms ease-out;
+  -o-transition: background-color 80ms ease-out;
+  -ms-transition: background-color 80ms ease-out;
+  transition: background-color 80ms ease-out;
+}
+/**
+ * Inputs
+ */
+
+input {
+    margin-bottom: 5px;
+    background: #fff;
+    padding-left: 56px;
+    border-radius: 0;
+    margin-top: 10px;
+}
+
+input[type=text] {
+  background-image: url(/bundles/app/images/user.svg)!important;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 16px center;
+  font-family: 'Roboto', Arial, sans-serif;
+
+}
+
+input[type=password] {
+  background-image: url(/bundles/app/images/lock.svg)!important;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 16px center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.logo{
+    background-image: url(/bundles/app/images/inno-logo.png)!important;
+    background-repeat: no-repeat;
+    display:inline-block;
+    width:200px;
+    height:50px;
+}
+.logo-black{
+    background-image: url(/bundles/app/images/inno-logo-black.png)!important;
+    background-repeat: no-repeat;
+    display:inline-block;
+    width:200px;
+    height:50px;
+    margin-bottom: 15px;
+}
+input:hover {
+  background-color: #f9f9f9;
+}
+input:focus {
+  border-left: 5px solid #005F7F;
+  outline: none;
+  background-color: #fff;
+}
+
+/**
+ * Button
+ */
+
+button {
+  background-color: #005F7F;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 11px;
+}
+
+button:hover, button:focus {
+  background-color: #002F40;
+  outline: none;
+}
+
+button:active  {
+  opacity: .7;
+}
+.checbox{
+    margin-bottom: 20px;
+}
+.keepmelog{
+    color: white;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+.check{
+    float: left;
+    width: auto;
+    margin-bottom: 10px;
+    margin-right: 5px !important;
+}
+@media only screen and (max-width: 767px){ 
+    body{
+       padding:0!important;
+    }
+    form{
+        width:100%;
+    }
+}
+.bg-danger {
+    border-radius: 0;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400;
+    background: linear-gradient(to right,#fff,#F7564A,#fff);
+    font-size: 11px;
+}
