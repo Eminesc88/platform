@@ -1,9 +1,14 @@
 {% extends 'AppBundle::base_admin.html.twig'%}
 
-{% block heading %}<h1>Introducere materii</h1>{% endblock %}
+{% block heading %}<h1>Materii</h1>{% endblock %}
 {% block content %}
+    <button id="button" class="btn btn-default save-btn">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        {{ 'Adaugă curs'|trans }}
+    </button>
+    <br>
     <div class="container no-padding">
-        <div class="row">
+        <div class="row" style="display:none" id="new-course">
             <div class="col-md-9 no-padding" >
                 {{ form_start(courseForm) }}
                 {{ form_row(courseForm.faculty, {'attr':{'class': 'select2' }}) }}
@@ -12,6 +17,39 @@
             </div>
         </div>
     </div>
+                
+    {% if courses%}
+        <div class="container">
+        <br><br><br>
+            <table style="max-width:30%"  class="table-bordered table">
+                <thead>
+                <tr style="background-color: #c0a16b" class="persist-header">
+                        <th >Facultate</th>
+                        <th >Curs</th>
+                        <th >Anul de studiu</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for course in courses  %}
+                    <tr>
+                        <td ><b>{{ course.faculty.faculty}}</b></td>
+                        <td ><b>{{ course.course}}</b></td>
+                        <td ><b>{{ course.year}}</b></td>
+                        <td >
+                            <a href="{{ path('delete_course',{'id':course.id})}}" id="deleteButton">
+                                <span class="red glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        Nu exista materii inregistrate
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
@@ -19,8 +57,17 @@
     <script>
         $("#legalHoliday_form_insert").prepend('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>');
         $(document).ready(function(){
+        $("#button").click(function(){
+                $("#new-course").toggle(800);
+            });
+        {% if app.request.query.has('show') %}
+                $("#new-course").show();
+        {% endif %}
+        $(".select2").select2();
+        }); 
+        
+        
             
-            $(".select2").select2();
-        });
+        
     </script>
 {% endblock %}

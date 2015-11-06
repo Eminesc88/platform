@@ -1,0 +1,43 @@
+{% extends 'AppBundle::base_admin.html.twig'%}
+
+{% block heading %}<h1>Profesori</h1>{% endblock %}
+{% block content %}
+    <button id="button" class="btn btn-default save-btn">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        {{ 'Adaugă profesor'|trans }}
+    </button>
+    <br>
+    <div class="container no-padding" >
+        <div class="row" style="display:none" id="new-profesor">
+            <div class="col-md-9 no-padding" >
+                {{ form_start(profesorForm) }}
+                {{form_row(profesorForm.lastName)}}
+                {{form_row(profesorForm.firstName)}}
+                <br><br>
+                {{ form_row(profesorForm.course, {'attr':{'class': 'select2', 'style': 'style="max-width:30%"' }}) }}
+                {{ form_end(profesorForm) }}
+            </div>
+        </div>
+    </div>
+                
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+{#        $("#legalHoliday_form_insert").prepend('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>');#}
+        $(document).ready(function(){
+        $("#button").click(function(){
+                $("#new-profesor").toggle(800);
+            });
+        {% if app.request.query.has('show') %}
+                $("#new-profesor").show();
+        {% endif %}
+        $(".select2").select2();
+        }); 
+        
+        
+            
+        
+    </script>
+{% endblock %}

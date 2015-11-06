@@ -238,7 +238,7 @@ th {
     background-color: #f9f9f9;
 }
 .table-bordered {
-    border: 1px solid #c3c3c3;
+    border: 0px solid #c3c3c3;
 }
 .table-bordered>tbody>tr>td,
 .table-bordered>tbody>tr>th,
@@ -277,7 +277,7 @@ th {
 #report .table-bordered>thead>tr>th {
     background-color: #f1f1f1;
     border: 1px solid #fff;
-    font-weight: 500;
+    font-weight: 200;
     text-transform: uppercase;
     font-size: 12px;
     text-align: left;
@@ -840,7 +840,7 @@ h1 {
     background-image: none;
     background-color: #f7f7f7;
 }
-#legalholiday {
+#new-faculty {
     display: none;
 }
 button#deleteButton,

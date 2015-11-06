@@ -4,7 +4,6 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
-use AppBundle\Entity\Faculty;
 
 class CourseType extends AbstractType {
     
@@ -39,7 +38,15 @@ class CourseType extends AbstractType {
                 'required' => true,
                 'label' => 'Facultatea',
             ))
-                
+            ->add('year', 'choice', array(
+                'choice_list' => new ChoiceList(
+                        array(1, 2, 3, 4, 5, 6, 7, 8),
+                        array(1, 2, 3, 4, 5, 6, 7, 8)
+                        ),
+                'multiple' => false,
+                'required' => true,
+                'label' => 'An studiu'
+            )) 
             ->add('insert', 'submit', array('label' => 'Insereaza'));
     
     }    

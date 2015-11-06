@@ -17,14 +17,21 @@ class GeneralService {
     
     public function getFaculty()
     {
-        
-        $faculties = $this->em->getRepository("AppBundle:Faculty")->findAll();
-            
-        return $faculties;
+        return $this->em->getRepository("AppBundle:Faculty")->findAll();
     }
     
     public function getFacultyId($name)
     {
         return $this->em->getRepository("AppBundle:Faculty")->findOneBy(array('faculty' => $name));
+    }
+    
+    public function getCourse()
+    {
+        return $this->em->getRepository("AppBundle:Course")->findAll();
+    }
+    
+    public function getCourseId()
+    {
+        return $this->em->getRepository("AppBundle:Course")->findAll();
     }
 }

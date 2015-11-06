@@ -47,6 +47,12 @@ class Student implements AdvancedUserInterface
      * @ORM\Column(name="last_name", type="string")
      */
     protected $lastName;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Faculty")
+     * @ORM\JoinColumn(name="faculty", referencedColumnName="id"))
+     */
+    private $faculty;
 
     /**
      * @Assert\NotBlank()
@@ -128,7 +134,16 @@ class Student implements AdvancedUserInterface
     function setEnabled($enabled) {
         $this->enabled = $enabled;
     }
+    
+    function getFaculty() {
+        return $this->faculty;
+    }
 
+    function setFaculty($faculty) {
+        $this->faculty = $faculty;
+    }
+
+    
     public function eraseCredentials() {
         
     }

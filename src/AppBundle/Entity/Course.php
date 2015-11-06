@@ -29,6 +29,11 @@ class Course {
      */
     private $faculty;
     
+    /**
+     * @ORM\Column(name="year", type="integer", length=1 )
+     */
+    private $year;
+    
     function getId() {
         return $this->id;
     }
@@ -50,8 +55,15 @@ class Course {
     }
 
     function setFaculty($faculty) {
-        $this->faculty = $faculty;
+        $this->faculty= $faculty;
     }
 
+    function getYear() {
+        return $this->year;
+    }
+
+    function setYear($year) {
+        $this->year = $year;
+    }
 
 }

@@ -86,7 +86,21 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="{{ asset_url }}"></script>
-    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        
+        var delayFlashMsgClear = setTimeout(function() {
+            $('#flashmessage').slideUp(
+                1000,
+                function() {
+                    //do something when animation complete
+                    clearTimeout(delayFlashMsgClear);
+                }
+            );   
+        }, 2000);
+
+    });
+    </script>
     {% endjavascripts %}
 {% endblock %}
 </body>

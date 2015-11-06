@@ -1,8 +1,12 @@
 {% extends 'AppBundle::base_admin.html.twig'%}
 
-{% block heading %}<h1>Introducere facultate</h1>{% endblock %}
+{% block heading %}<h1>Facultati</h1>{% endblock %}
 {% block content %}
-    <div class="container no-padding">
+    <button id="button" class="btn btn-default save-btn">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        {{ 'Adaugă facultate'|trans }}
+    </button>
+    <div class="container no-padding" id="new-faculty" style="display:none">
         <div class="row">
             <div class="col-md-9 no-padding" >
                 {{ form_start(facultyForm) }}
@@ -11,11 +15,41 @@
             </div>
         </div>
     </div>
+    {% if faculties%}
+    <div class="container">
+        <br><br><br>
+        <table style="max-width:10%"  class="table-bordered table" >
+            <thead>
+                <tr style="background-color: #c0a16b" class="persist-header">
+                        <th >Facultate</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for faculty in faculties  %}
+                    <tr>
+                        <td >{{ faculty.faculty}}</td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        nu e plin
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script>
-        
+        $(document).ready(function(){
+        $("#button").click(function(){
+                $("#new-faculty").toggle(800);
+            });
+        {% if app.request.query.has('show') %}
+                $("#new-faculty").show();
+            {% endif %}
+        });
     </script>
 {% endblock %}

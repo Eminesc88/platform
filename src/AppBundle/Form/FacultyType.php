@@ -10,6 +10,7 @@ class FacultyType extends AbstractType
     {
         $builder
             ->add('faculty', null,  array('label' => 'Nume Facultate'))
+            ->add('numberofyear', null, array('label' => 'Numar an studii'))
             ->add('insert', 'submit', array('label' => 'Inserează'));
 
     }

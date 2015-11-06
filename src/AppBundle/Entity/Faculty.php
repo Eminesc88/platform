@@ -23,6 +23,12 @@ class Faculty {
      */
     protected $faculty;
     
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Column(name= "number_of_year")
+     */
+    protected $numberOfYear;
+    
     
     function getId() {
         return $this->id;
@@ -40,4 +46,14 @@ class Faculty {
     function setFaculty($faculty) {
         $this->faculty = $faculty;
     }
+    
+    function getNumberOfYear() {
+        return $this->numberOfYear;
+    }
+
+    function setNumberOfYear($numberOfYear) {
+        $this->numberOfYear = $numberOfYear;
+    }
+
+    
 }
